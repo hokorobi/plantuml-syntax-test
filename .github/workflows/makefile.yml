@@ -20,9 +20,9 @@ jobs:
       run: chmod +x tohtml.sh
     - name: chmod x index.sh
       run: chmod +x index.sh
-    - name: make
-      run: make index.html;make style.css
-      timeout-minutes: 60
+    # - name: make
+    #   run: make index.html;make style.css
+    #   timeout-minutes: 60
     - name: a
       run: mkdir ./public
     # - name: b
