@@ -20,6 +20,13 @@ jobs:
       run: chmod +x tohtml.sh
     - name: chmod x index.sh
       run: chmod +x index.sh
-    - name: make
-      run: make index.html
-      timeout-minutes: 60
+#    - name: make
+#      run: make index.html
+#      timeout-minutes: 60
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      if: ${{ github.ref == 'refs/heads/main' }}
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+        
