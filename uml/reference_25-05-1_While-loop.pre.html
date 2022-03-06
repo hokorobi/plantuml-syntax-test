@@ -1,0 +1,23 @@
+<pre id='vimCodeElement'>
+
+<span class="PreProc">@startuml</span>
+<span class="PreProc">!procedure </span><span class="Constant">$foo($arg)</span>
+  :procedure <span class="Statement">start</span>;
+  !<span class="Statement">while</span> $arg!=0
+    !$i=3
+    #<span class="Constant">palegreen</span>:arg=$arg;
+    !<span class="Statement">while</span> $i!=0
+      :arg=$arg <span class="Statement">and</span> i=$i;
+      !$i = $i - 1
+    !<span class="Statement">endwhile</span>
+    !$arg = $arg - 1
+  !<span class="Statement">endwhile</span>
+  :procedure <span class="Statement">end</span>;
+<span class="PreProc">!endprocedure</span>
+
+<span class="Statement">start</span>
+$foo<span class="Type">(2)</span>
+<span class="Statement">end</span>
+<span class="PreProc">@enduml</span>
+
+</pre>

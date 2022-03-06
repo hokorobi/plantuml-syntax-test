@@ -1,0 +1,7 @@
+.PreProc { color: #ff40ff; }
+.Constant { color: #ff6060; }
+.Identifier { color: #00ffff; }
+.Statement { color: #ffff00; }
+.BaseClass <span class="Identifier">&lt;|--</span> Person
+.BaseClass <span class="Identifier">&lt;|-</span> Meeting
+.BaseClass <span class="Identifier">&lt;|--</span> Person

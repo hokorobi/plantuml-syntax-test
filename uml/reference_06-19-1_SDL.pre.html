@@ -1,0 +1,28 @@
+<pre id='vimCodeElement'>
+
+<span class="PreProc">@startuml</span>
+<span class="Constant">:Ready;</span>
+<span class="Constant">:next(o)|</span>
+<span class="Constant">:Receiving;</span>
+<span class="Statement">split</span>
+<span class="Constant">:nak(i)&lt;</span>
+<span class="Constant">:ack(o)&gt;</span>
+<span class="Statement">split</span> <span class="Statement">again</span>
+<span class="Constant">:ack(i)&lt;</span>
+<span class="Constant">:next(o)</span>
+<span class="Constant">on several line|</span>
+<span class="Constant">:i :</span>= i + 1]
+<span class="Constant">:ack(o)&gt;</span>
+<span class="Statement">split</span> <span class="Statement">again</span>
+<span class="Constant">:err(i)&lt;</span>
+<span class="Constant">:nak(o)&gt;</span>
+<span class="Statement">split</span> <span class="Statement">again</span>
+<span class="Constant">:foo/</span>
+<span class="Statement">split</span> <span class="Statement">again</span>
+:i &gt; 5}
+<span class="Statement">stop</span>
+<span class="Statement">end</span> <span class="Statement">split</span>
+<span class="Constant">:finish;</span>
+<span class="PreProc">@enduml</span>
+
+</pre>

@@ -1,0 +1,21 @@
+<pre id='vimCodeElement'>
+
+<span class="PreProc">@startuml</span>
+|#<span class="Constant">pink</span>|Actor_For_red|
+<span class="Statement">start</span>
+<span class="Statement">if</span> <span class="Type">(color?)</span> <span class="Statement">is</span> <span class="Type">(red)</span> <span class="Statement">then</span>
+#<span class="Constant">pink</span><span class="Constant">:**action red**;</span>
+<span class="Constant">:foo1;</span>
+<span class="Statement">else</span> <span class="Type">(not red)</span>
+|#<span class="Constant">lightgray</span>|Actor_For_no_red|
+#<span class="Constant">lightgray</span><span class="Constant">:**action not red**;</span>
+<span class="Constant">:foo2;</span>
+<span class="Statement">endif</span>
+|Next_Actor|
+#<span class="Constant">lightblue</span><span class="Constant">:foo3;</span>
+<span class="Constant">:foo4;</span>
+|Final_Actor|
+#<span class="Constant">palegreen</span><span class="Constant">:foo5;</span>
+<span class="Statement">stop</span>
+<span class="PreProc">@enduml</span>
+</pre>
