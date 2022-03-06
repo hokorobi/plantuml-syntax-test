@@ -13,33 +13,26 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    
-    - name: Install dependencies
-      run: make install
-    - name: chmod x tohtml.sh
-      run: chmod +x tohtml.sh
-    - name: chmod x index.sh
-      run: chmod +x index.sh
-    # - name: make
-    #   run: make index.html;make style.css
-    #   timeout-minutes: 60
-    - name: a
-      run: mkdir ./public
-    # - name: b
-    #   run: cp index.html ./public
-    # - name: c
-    #   run: cp style.css ./public
+      with:
+        submodules: recursive
+    - name: chmod x *.sh
+      run: chmod +x *.sh
+    - name: make html
+      run: make index.html;make style.css
+      timeout-minutes: 60
     - name: Generate PNG Diagrams
       uses: hokorobi/plantuml-github-action@main
       with:
         args: -v -tpng ./uml/*.uml
-    - name: d
-      run: cp ./uml/*.png ./public
+    - name: mkdir
+      run: mkdir ./publish
+    - name: copy to dir
+      run: cp index.html style.css ./uml/*.png ./publish
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/master' }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
+        publish_dir: ./publish
 
