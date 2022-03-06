@@ -15,8 +15,6 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Install dependencies
-      run: npm install
-    - name: update syntax
-      run: git submodule update --init
+      run: make install
     - name: make
-      run: make index
+      run: make dev
