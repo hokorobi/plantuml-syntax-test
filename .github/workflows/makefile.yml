@@ -19,4 +19,4 @@ jobs:
     - name: update syntax
       run: git submodule update --init
     - name: make
-      run: make; make dev      
+      run: make index
