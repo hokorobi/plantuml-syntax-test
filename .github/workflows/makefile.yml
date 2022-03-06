@@ -23,11 +23,11 @@ jobs:
     - name: Generate PNG Diagrams
       uses: hokorobi/plantuml-github-action@main
       with:
-        args: -v -tpng ./uml/*.uml
+        args: -v -tpng uml/*.uml
     - name: mkdir
-      run: mkdir ./publish
+      run: mkdir -p publish/uml
     - name: copy to dir
-      run: cp index.html style.css ./uml/*.png ./publish
+      run: cp -r index.html style.css uml publish
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
