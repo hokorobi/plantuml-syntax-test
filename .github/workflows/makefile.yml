@@ -25,10 +25,17 @@ jobs:
       timeout-minutes: 60
     - name: a
       run: mkdir ./public
-    - name: b
-      run: cp index.html ./public
-    - name: c
-      run: cp style.css ./public
+    # - name: b
+    #   run: cp index.html ./public
+    # - name: c
+    #   run: cp style.css ./public
+    - name: Generate PNG Diagrams
+      uses: holowinski/plantuml-github-action@main
+      with:
+        args: -v -tpng ./uml/*.uml
+    - name: d
+      run: cp ./uml/*.png ./public
+
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/master' }}
