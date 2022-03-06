@@ -16,8 +16,10 @@ jobs:
     
     - name: Install dependencies
       run: make install
-    - name: chmod x
+    - name: chmod x tohtml.sh
       run: chmod +x tohtml.sh
+    - name: chmod x index.sh
+      run: chmod +x index.sh
     - name: make
-      run: make clean;make index.html
+      run: make index.html
       timeout-minutes: 60
