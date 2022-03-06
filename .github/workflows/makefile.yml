@@ -17,4 +17,5 @@ jobs:
     - name: Install dependencies
       run: make install
     - name: make
-      run: make dev
+      run: make index.html
+      timeout-minutes: 60
