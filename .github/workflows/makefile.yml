@@ -30,7 +30,7 @@ jobs:
     # - name: c
     #   run: cp style.css ./public
     - name: Generate PNG Diagrams
-      uses: holowinski/plantuml-github-action@main
+      uses: hokorobi/plantuml-github-action@main
       with:
         args: -v -tpng ./uml/*.uml
     - name: d
