@@ -23,6 +23,10 @@ jobs:
 #    - name: make
 #      run: make index.html
 #      timeout-minutes: 60
+    - name: a
+      run: mkdir ./public
+    - name: b
+      run: cp index.html
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       if: ${{ github.ref == 'refs/heads/main' }}
