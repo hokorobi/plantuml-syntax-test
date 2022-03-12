@@ -1,13 +1,12 @@
 <pre id='vimCodeElement'>
-
 <span class="PreProc">@startuml</span>
 nwdiag {
-  internet <span class="Type">[ shape = cloud]</span>;
-  internet <span class="Identifier">--</span> router;
+internet <span class="Type">[ shape = cloud]</span>;
+internet <span class="Identifier">--</span> router;
 
-  network proxy {
-    router;
-    app;
+network proxy {
+router;
+app;
   }
 
   <span class="Statement">group</span> {
@@ -17,9 +16,9 @@ nwdiag {
   }
 
   network default {
-    app;
-    db;
-  }
+  app;
+  db;
+}
 }
 <span class="PreProc">@enduml</span>
 

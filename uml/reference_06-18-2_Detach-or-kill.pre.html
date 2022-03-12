@@ -1,17 +1,16 @@
 <pre id='vimCodeElement'>
-
 <span class="PreProc">@startuml</span>
 <span class="Constant">:start;</span>
 <span class="Statement">fork</span>
-<span class="Constant">:foo1;</span>
-<span class="Constant">:foo2;</span>
+  :foo1;
+  :foo2;
 <span class="Statement">fork</span> <span class="Statement">again</span>
-<span class="Constant">:foo3;</span>
-<span class="Statement">kill</span>
+  :foo3;
+  <span class="Statement">kill</span>
 endfork
 <span class="Statement">if</span> <span class="Type">(foo4)</span> <span class="Statement">then</span>
-<span class="Constant">:foo5;</span>
-<span class="Statement">kill</span>
+  :foo5;
+  <span class="Statement">kill</span>
 <span class="Statement">endif</span>
 <span class="Constant">:foo6;</span>
 <span class="Statement">kill</span>

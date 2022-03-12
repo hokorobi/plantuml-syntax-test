@@ -1,20 +1,19 @@
 <pre id='vimCodeElement'>
-
 <span class="PreProc">@startuml</span>
 <span class="PreProc">!procedure </span><span class="Constant">$msg($source, $destination)</span>
-  $source <span class="Identifier">--&gt;</span> $destination
+$source <span class="Identifier">--&gt;</span> $destination
 <span class="PreProc">!endprocedure</span>
 
 <span class="PreProc">!procedure </span><span class="Constant">$init_class($name)</span>
-  <span class="Statement">class</span> $name <span class="Type">{</span>
-<span class="Type">    $addCommonMethod()</span>
-<span class="Type">  }</span>
+<span class="Statement">class</span> $name <span class="Type">{</span>
+<span class="Type">  $addCommonMethod()</span>
+<span class="Type">}</span>
 <span class="PreProc">!endprocedure</span>
 
 
 <span class="PreProc">!procedure </span><span class="Constant">$addCommonMethod()</span>
-  toString<span class="Type">()</span>
-  hashCode<span class="Type">()</span>
+toString<span class="Type">()</span>
+hashCode<span class="Type">()</span>
 <span class="PreProc">!endprocedure</span>
 
 
