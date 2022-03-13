@@ -591,6 +591,7 @@
 <li><a href="#uml/reference_25-11-1_Including-files-or-URL">uml/reference_25-11-1_Including-files-or-URL</a></li>
 <li><a href="#uml/reference_25-14-1_Logging">uml/reference_25-14-1_Logging</a></li>
 <li><a href="#uml/reference_25-15-1_Memory-dump">uml/reference_25-15-1_Memory-dump</a></li>
+<li><a href="#uml/reference_25-16-1_Assertion">uml/reference_25-16-1_Assertion</a></li>
 <li><a href="#uml/reference_25-19-1_Argument-concatenation">uml/reference_25-19-1_Argument-concatenation</a></li>
 <li><a href="#uml/reference_25-20-1_Dynamic-invocation">uml/reference_25-20-1_Dynamic-invocation</a></li>
 <li><a href="#uml/reference_25-20-2_Dynamic-invocation">uml/reference_25-20-2_Dynamic-invocation</a></li>
@@ -603,6 +604,7 @@
 <li><a href="#uml/reference_27-01-1_List-of-Standard-Library">uml/reference_27-01-1_List-of-Standard-Library</a></li>
 <li><a href="#uml/reference_27-02-1_ArchiMate">uml/reference_27-02-1_ArchiMate</a></li>
 <li><a href="#uml/reference_27-03-1_AWS-library">uml/reference_27-03-1_AWS-library</a></li>
+<li><a href="#uml/reference_27-03-2_AWS-library">uml/reference_27-03-2_AWS-library</a></li>
 <li><a href="#uml/reference_27-04-1_Amazon-Labs-AWS-Library">uml/reference_27-04-1_Amazon-Labs-AWS-Library</a></li>
 <li><a href="#uml/reference_27-05-1_Azure-library">uml/reference_27-05-1_Azure-library</a></li>
 <li><a href="#uml/reference_27-06-1_C4-library">uml/reference_27-06-1_C4-library</a></li>
@@ -13688,6 +13690,19 @@ Alice <span class="Identifier">-&gt;</span> Bob<span class="Comment"> : 4 $inc(&
 <img src="uml/reference_25-15-1_Memory-dump.png" />
 </td></tr></table>
 <hr />
+<a name="uml/reference_25-16-1_Assertion"></a><table><tr><td>
+<h2>uml/reference_25-16-1_Assertion</h2>
+<pre id='vimCodeElement'>
+<span class="PreProc">@startuml</span>
+Alice <span class="Identifier">-&gt;</span> Bob<span class="Comment"> : Hello</span>
+<span class="PreProc">!assert </span><span class="Constant">%strpos(&quot;abcdef&quot;, &quot;cd&quot;)==3 : &quot;This always fails&quot;</span>
+<span class="PreProc">@enduml</span>
+
+</pre>
+</td><td>
+<img src="uml/reference_25-16-1_Assertion.png" />
+</td></tr></table>
+<hr />
 <a name="uml/reference_25-19-1_Argument-concatenation"></a><table><tr><td>
 <h2>uml/reference_25-19-1_Argument-concatenation</h2>
 <pre id='vimCodeElement'>
@@ -13957,6 +13972,28 @@ s3_internal <span class="Identifier">&lt;-</span> s3_partner
 </pre>
 </td><td>
 <img src="uml/reference_27-03-1_AWS-library.png" />
+</td></tr></table>
+<hr />
+<a name="uml/reference_27-03-2_AWS-library"></a><table><tr><td>
+<h2>uml/reference_27-03-2_AWS-library</h2>
+<pre id='vimCodeElement'>
+<span class="PreProc">@startuml</span>
+<span class="PreProc">!include </span><span class="Constant">&lt;aws/common&gt;</span>
+<span class="PreProc">!include </span><span class="Constant">&lt;aws/Storage/AmazonS3/AmazonS3&gt;</span>
+<span class="PreProc">!include </span><span class="Constant">&lt;aws/Storage/AmazonS3/AmazonS3_LARGE&gt;</span>
+<span class="Statement">skinparam</span> <span class="Identifier">nodeBackgroundColor</span> <span class="Constant">White</span>
+<span class="Statement">skinparam</span> <span class="Type">storage</span><span class="Type">&lt;&lt;**AmazonS3**&gt;&gt;</span> {
+  <span class="Identifier">backgroundColor</span> <span class="Constant">#F9DFDC</span>
+}
+AMAZONS3<span class="Type">(s3_internal,&quot;Default S3&quot;)</span>
+AMAZONS3<span class="Type">(s3_internal2,&quot;S3 as node&quot;,node)</span>
+AMAZONS3_LARGE<span class="Type">(s3_partner,&quot;Large S3&quot;)</span>
+s3_internal2 <span class="Identifier">&lt;</span><span class="Identifier">-r-</span> s3_partner
+s3_internal <span class="Identifier">&lt;</span><span class="Identifier">-l-</span> s3_partner
+<span class="PreProc">@enduml</span>
+</pre>
+</td><td>
+<img src="uml/reference_27-03-2_AWS-library.png" />
 </td></tr></table>
 <hr />
 <a name="uml/reference_27-04-1_Amazon-Labs-AWS-Library"></a><table><tr><td>
